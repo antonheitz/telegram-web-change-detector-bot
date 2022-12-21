@@ -1,0 +1,9 @@
+version: "3"
+services:
+  bot:
+    image: telegram-webchange-bot:latest
+    build: .
+    container_name: telegram-webchange-bot
+    env_file: .env
+    restart: unless-stopped
+
