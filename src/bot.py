@@ -29,7 +29,11 @@ def echo(update: Update, context: CallbackContext) -> None:
 
 
 def main() -> None:
-    bot_token = os.getenv("BOT_TOKEN")
+    bot_token: str = os.getenv("BOT_TOKEN")
+    try:
+        bot_interval: int = int(os.getenv("BOT_CHECK_INTERVAL")) * 60
+    except Exception as e:
+        bot_interval: int = 5 * 60
     updater = Updater(bot_token)
     dispatcher = updater.dispatcher
 

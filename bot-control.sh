@@ -8,8 +8,11 @@ case "$1" in
         echo "running setup..."
         echo "Please enter your bots token:"
         read token
+        echo "What interval would you like to clock the checks in minutes?"
+        read check_interval
         echo "creating .env file"
-        echo "BOT_TOKEN=$token" > .env
+        echo "BOT_TOKEN=$token
+BOT_CHECK_INTERVAL=$check_interval" > .env
         echo "done."
         ;;
     # dev
