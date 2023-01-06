@@ -21,7 +21,7 @@ BOT_CHECK_INTERVAL=$check_interval" > .env
         set -a
         source .env
         set +a
-        python3 src/bot.py
+        python3 main.py
         ;;
     # build
     "build")
